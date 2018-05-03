@@ -65,7 +65,7 @@
 //and this some commentgi
 function  hideSpan()
 {
-   document.getElementById("username").value = "";
+   document.getElementById("userndame").value = "";
     document.getElementById("password").value = "";
     document.getElementById("error1").innerHTML = "";
     document.getElementById("error2").innerHTML = "";
