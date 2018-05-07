@@ -1,0 +1,37 @@
+<html>
+<head>
+    
+   <script type="text/javascript">
+       // timer variable 
+       var timer;
+        var x = 1;
+       // increase number function
+       function increase(){
+           document.getElementsByTagName("input")[1].value = x;
+           x++;
+        
+       }
+	 // start timer function
+        function StartTimer(){
+                timer = window.setInterval(increase,1);
+        }
+    // Stop timer function
+           function StopTimer(){
+               window.clearInterval(timer);
+               var second = x/1000;
+               document.getElementsByTagName("span")[0].innerText = second;
+               x= 1;
+           }
+    </script> 
+    <style type="text/css">
+       
+    </style>
+</head>
+    <body>
+        <input type="button" value= "Start" onclick="StartTimer();">
+         <input type = "text" size="4" value="0">
+          <input type="button" value= "Stop" onclick="StopTimer();">
+          <span></span>
+     
+    </body>
+</html>

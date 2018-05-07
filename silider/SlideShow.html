@@ -1,0 +1,68 @@
+<html>
+<head>
+    
+   <script type="text/javascript">
+     var pics = new Array("images/imge (1).JPG", "images/ (1).jpeg", "images/imge (3).JPG", "images/imge (4).JPG", "images/imge (5).JPG", "images/imge (6).JPG", "images/imge (7).JPG");
+       var i =0;
+       var timer;
+       function ShowImag(){
+           if(i > 6){
+               i=0;
+           }
+           document.getElementById("slider").innerHTML = "<img onmouseout='StartSlideShow();' onmouseover='PuseSlideShow();' src='"+ pics[i] +"'>";
+           i++;
+         timer =   window.setTimeout(ShowImag,2000);
+       }
+       function PuseSlideShow(){
+          window.clearTimeout(timer);
+       }
+       function StartSlideShow(){
+          ShowImag();
+       }
+       function ShowThis(id){
+          var parts = id.split("_");
+           var x = parts[1];
+           i = x;
+        document.getElementById("slider").innerHTML = "<img onmouseout='StartSlideShow();' onmouseover='PuseSlideShow();' src='"+ pics[x] +"'>";
+       }
+		
+	</script>
+    <style type="text/css">
+        #container{
+            width: 600px;margin:0 auto;background-color: lightblue;
+        }
+        
+        #slider{height: 300px;          
+        }
+		#slider img{width:590px; margin-left: 5px;height: 290px;margin-top: 5px;
+		}
+        #thumbnail{height: 70px;background-color: #EEE;border: 2px solid #ccc;
+        }
+		#thumbnail img{
+            width:80px;
+            margin-left: 5px;
+            margin-top: 4px;
+		 }
+        #thumbnail img:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+    <body onload="ShowImag();">
+        <div id ="container" >
+        <!--//slider-->
+         <div id="slider">
+
+        </div>
+        <!--slider-->
+        <div id="thumbnail">
+            <script type = "text/javascript">
+               for(x in pics){
+                    document.write("<img id = 'pic_" + x +"'  onmouseover = 'ShowThis(this.id);'  onmouseout='StartSlideShow();' onmouseover='PuseSlideShow();' src='" + pics[x] + "'>");
+               }
+            </script>
+        </div>
+        
+     </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<head>
+    
+   <script type="text/javascript">
+       function showClock(){
+           var d = new Date();
+          var clock =  d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+           document.getElementsByTagName("input")[0].value  = clock;
+             window.setTimeout(showClock,1000);
+       }
+     
+    </script> 
+    <style type="text/css">
+       
+    </style>
+</head>
+    <body onload="showClock();">
+         <input type = "text">
+          
+     
+    </body>
+</html>
